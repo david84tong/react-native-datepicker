@@ -404,14 +404,18 @@ class DatePicker extends Component {
               </View>
             </Modal>
           )}
-          {/* {mode === "time" && this.state.isPicker ? (
+          {Platform.OS === "android" &&
+          mode === "time" &&
+          this.state.isPicker ? (
             <DateTimePicker
               mode="time"
               value={this.state.date}
               onChange={this.onTimePicked}
             />
           ) : null}
-          {mode === "date" && this.state.isPicker ? (
+          {Platform.OS === "android" &&
+          mode === "date" &&
+          this.state.isPicker ? (
             <DateTimePicker
               mode="date"
               minimumDate={minDate && this.getDate(minDate)}
@@ -419,7 +423,7 @@ class DatePicker extends Component {
               value={this.state.date}
               onChange={this.onDatePicked}
             />
-          ) : null} */}
+          ) : null}
         </View>
       </TouchableComponent>
     );
